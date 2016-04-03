@@ -4,6 +4,7 @@ angular.module('confusionApp', [])
         $scope.tab = 1;
         $scope.filtText = '';
         $scope.dishes = menuFactory.getDishes();
+        $scope.showDetails = false;
 
         $scope.select = function(setTab) {
             $scope.tab = setTab;
@@ -22,6 +23,9 @@ angular.module('confusionApp', [])
         };
         $scope.isSelected = function (checkTab) {
             return ($scope.tab === checkTab);
+        };
+        $scope.toggleDetails = function() {
+            $scope.showDetails = !$scope.showDetails;
         };
     }])
     .controller('dishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
