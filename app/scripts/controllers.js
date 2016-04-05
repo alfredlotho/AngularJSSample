@@ -1,6 +1,6 @@
 'use strict';
 angular.module('confusionApp', [])
-     .controller('menuController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+     .controller('MenuController', ['$scope', 'menuFactory', function($scope, menuFactory) {
         $scope.tab = 1;
         $scope.filtText = '';
         $scope.dishes = menuFactory.getDishes();
@@ -28,8 +28,8 @@ angular.module('confusionApp', [])
             $scope.showDetails = !$scope.showDetails;
         };
     }])
-    .controller('dishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
-        $scope.dish = menuFactory.getDish(3);
+    .controller('DishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+        $scope.dish = menuFactory.getDish(0);
     }])
     .controller('ContactController', ['$scope', function($scope) {
         $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
@@ -54,4 +54,13 @@ angular.module('confusionApp', [])
                 console.log($scope.feedback);
             }
         };
+    }])
+    .controller('DishCommentController', ['$scope', function($scope) {
+        $scope.currComment = {author:"", rating:"5", comment:"", date:""};
+        $scope.submitComment = function () {
+            $scope.currComment.date = new Date().toISOString();
+            $scope.dish.comments.push($scope.currComment);
+            $scope.commentForm.$setPristine();
+            $scope.currComment = {author:"", rating:"5", comment:"", date:""};
+        }
     }]);
