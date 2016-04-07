@@ -10,6 +10,7 @@ $RECYCLE.BIN/
 node_modules/*
 dist/*
 .tmp/*
+bower_components/*
 
 # Windows Installer files
 *.cab
