@@ -1,5 +1,5 @@
 'use strict';
-angular.module('confusionApp', [])
+angular.module('confusionApp')
      .controller('MenuController', ['$scope', 'menuFactory', function($scope, menuFactory) {
         $scope.tab = 1;
         $scope.filtText = '';
@@ -28,8 +28,9 @@ angular.module('confusionApp', [])
             $scope.showDetails = !$scope.showDetails;
         };
     }])
-    .controller('DishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
-        $scope.dish = menuFactory.getDish(0);
+    .controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
+        var dish = menuFactory.getDish(parseInt($routeParams.id,10));
+        $scope.dish = dish;
     }])
     .controller('ContactController', ['$scope', function($scope) {
         $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
