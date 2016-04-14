@@ -197,8 +197,10 @@ angular.module('confusionApp')
                     return dishes[index];
                 };
     
-                // implement a function named getPromotion
-                // that returns a selected promotion.
+                this.getPromotion = function (index) {
+
+                    return promotions[index];
+                };
     
                         
         })

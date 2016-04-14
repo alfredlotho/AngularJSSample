@@ -92,9 +92,9 @@ angular.module('confusionApp')
                 $scope.mycomment = {rating:5, comment:"", author:"", date:""};
             }
         }])
-
-        // implement the IndexController and About Controller here
-        
+        .controller('IndexController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+            $scope.promotion = menuFactory.getPromotion(0);
+         }])
         .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
             $scope.leadership = corporateFactory.getLeaders();
          }])
