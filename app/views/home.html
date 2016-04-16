@@ -38,7 +38,19 @@
                 <h3 align=center>Meet our Culinary Specialists</h3>
             </div>
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-				<h4>Implement the Executive Chef Info Here</h4>
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                        <img class="media-object img-thumbnail"
+                         src="{{executiveChef.image}}" alt="{{executiveChef.abbr}}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{executiveChef.name}}</h2>
+                        <h4>{{executiveChef.designation}}</h4>
+                        <p>{{executiveChef.description}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
