@@ -6,7 +6,10 @@
                 <h3 align=center>Our Lipsmacking Culinary Creations</h3>
             </div>
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-                <div class="media">
+                <div ng-if="!showDish">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media" ng-if="showDish">
                     <div class="media-left media-middle">
                         <a href="#">
                         <img class="media-object img-thumbnail"
@@ -53,13 +56,13 @@
                     <div class="media-left media-middle">
                         <a href="#">
                         <img class="media-object img-thumbnail"
-                         src="{{executiveChef.image}}" alt="{{executiveChef.abbr}}">
+                         src="{{leader.image}}" alt="{{leader.abbr}}">
                         </a>
                     </div>
                     <div class="media-body">
-                        <h2 class="media-heading">{{executiveChef.name}}</h2>
-                        <h4>{{executiveChef.designation}}</h4>
-                        <p>{{executiveChef.description}}</p>
+                        <h2 class="media-heading">{{leader.name}}</h2>
+                        <h4>{{leader.designation}}</h4>
+                        <p>{{leader.description}}</p>
                     </div>
                 </div>
             </div>
